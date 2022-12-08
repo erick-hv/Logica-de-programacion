@@ -1,0 +1,69 @@
+<meta charset="UTF-8">
+
+<h1>Programa para calcular IMC</h1>
+
+<script>
+
+    function saltarlinea() 
+    {
+
+        document.write("<br>");
+        document.write("<br>");
+
+    }
+
+    function imprimir(frase)
+    {
+        document.write(frase);
+        saltarlinea();
+
+    }
+
+    function calcularIMC(peso,altura) 
+    {
+    
+        return (peso/(altura*altura));
+
+    }
+
+    nombre = prompt("Ingrese su nombre");
+    pesoInformado = prompt(nombre + "ingrese su peso");
+    alturaInformada = prompt(nombre + "Ingrese su altura");
+
+    imcCalculado = calcularIMC(pesoInformado,alturaInformada)
+    
+    imprimir(nombre + ", su IMC es: " + imcCalculado);
+
+    if(imcCalculado < 18.5)
+    {
+        imprimir("IMC Bajo de lo recomendado")
+
+    }
+
+    if(imcCalculado >= 18.5)
+    {
+        if(imcCalculado < 25)
+        {
+            imprimir("IMC con intervalo normal")
+
+        }
+        
+    }
+
+    if(imcCalculado >= 25)
+    {
+        if(imcCalculado < 30)
+        {
+            imprimir("IMC considerado como sobrepeso")
+
+        }
+        
+    }
+
+    if(imcCalculado >= 30.0)
+    {
+        imprimir("IMC considerado como besidad")
+
+    }
+
+</script>
